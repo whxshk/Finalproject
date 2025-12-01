@@ -1,5 +1,6 @@
 🧬 Pancreatic Cancer Organoid Profiling – Full Bronze / Silver / Gold ETL & Analytics Pipeline
 
+
 This repository contains the complete data engineering and analytics workflow for the Pancreatic Cancer Organoid Profiling dataset. The project implements a full Medallion Architecture:
 
 🥉 Bronze Layer – Raw Data Upload
@@ -9,6 +10,8 @@ This repository contains the complete data engineering and analytics workflow fo
 🥇 Gold Layer – Curated Data, Features, Machine Learning & Power BI EDA
 
 This README fully documents the architecture, methodology, code workflow, and analytical results in a format suitable for academic evaluation.
+
+
 
 🌟 Project Overview
 
@@ -23,6 +26,7 @@ Machine learning
 Visualization in Power BI
 
 Downstream statistical analysis
+
 
 📁 Repository Contents
 .
@@ -43,6 +47,7 @@ PDF Documentation
 
 Background literature, motivation, and context.
 
+
 🧰 Tools & Technologies
 Layer	Tools
 Compute	Databricks, Spark, PySpark
@@ -52,6 +57,7 @@ Visualization	Power BI Desktop
 Language	Python
 🥉 Bronze Layer – Raw Data Upload
 Purpose
+
 
 The Bronze layer ingests raw, unmodified data while preserving the original schema for auditability and reproducibility.
 
@@ -113,6 +119,7 @@ Purpose
 
 Produce biologically meaningful, ML-ready datasets.
 
+
 1️⃣ counts_with_genes – Fully Annotated Table
 
 Join Silver long counts with gene metadata to obtain:
@@ -124,6 +131,7 @@ chromosome, start, end, strand
 sample_uuid
 
 raw count
+
 
 2️⃣ gene_features – Gene-Level Engineered Metrics
 
@@ -138,6 +146,7 @@ Sample detection percentage
 Expression variability indicators
 
 Used in downstream QC and ML workflows.
+
 
 3️⃣ sample_features – Sample-Level Engineered Features
 
@@ -156,6 +165,7 @@ pct_zero_genes
 normalized summary metrics
 
 These features enable PCA, clustering, and predictive modeling.
+
 
 4️⃣ normalized_counts – CPM + logCPM
 
@@ -191,6 +201,7 @@ logCPM density
 
 Mean–variance plots
 
+
 This satisfies the rubric requirement:
 ✔ “If there are no feature extraction, you need PowerBI EDA.”
 (In this project, both feature engineering and EDA are included.)
@@ -207,6 +218,7 @@ Used to visualize transcriptomic structure and detect sample groupings.
 KMeans (k = 3)
 
 Cluster labels assigned to each sample.
+
 
 🔮 Supervised Learning – Random Forest Regression
 Goal:
@@ -249,6 +261,7 @@ MAE:              87294.95
 MSE:              12837985974.22
 RMSE:             113304.84
 MAPE:             3.31%
+
 
 Interpretation
 
